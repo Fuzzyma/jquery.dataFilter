@@ -52,4 +52,4 @@ You can also use a jQuery-Collection with data-properties set to use them for fi
 
 For a working example see [here][test]
 
-[test]: https://raw.github.com/ulima/jquery-dataFilter/master/test/manual-test.htm
+[test]: https://github.com/Fuzzyma/jquery.dataFilter/blob/master/test/manual-test.htm

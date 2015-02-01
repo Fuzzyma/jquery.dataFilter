@@ -8,7 +8,7 @@
   "description": "Advanced filter with multiple choice filtering",
   "main": "./dist/jquery.dataFilter.js",
   "keywords": [
-    "jquery-plugin"
+    "jquery-plugin",
     "filter"
   ],
   "license": "MIT",

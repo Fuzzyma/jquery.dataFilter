@@ -8,6 +8,10 @@ Download the [production version][min] or the [development version][max].
 [min]: https://raw.github.com/ulima/jquery-dataFilter/master/dist/dataFilter.min.js
 [max]: https://raw.github.com/ulima/jquery-dataFilter/master/dist/dataFilter.js
 
+Or just run
+
+    bower install jquery.datafilter
+
 Include the script in your web page:
 
 	<script src="jquery.js"></script>

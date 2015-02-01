@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery-dataFilter Manual Test</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="../libs/jquery-loader.js"></script>
+  <script src="../src/jquery.dataFilter.js"></script>
+  <script>
+$(function(){
+    $('#items label input').click(function(){
+        $(this).toggleClass('active');
+        $('#items div div').hide().dataFilter($('#items label input.active')).show();
+    });
+    
+    $('#items button').click(function(){
+        $('#items label input').prop('checked', false).removeClass('active');
+        $('#items div div').hide().dataFilter($(this)).show();
+    });
+    
+});
+  
+  </script>
+  <style>
+#items div div{
+width:125px;
+height:125px;
+border:1px solid black;
+display:inline-block;
+margin:5px;
+padding:5px;
+}
+
+label{
+display:inline-block;
+width:200px;
+padding:5px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="items">
+   <label><input type="checkbox" data-prop1="1">data-prop1: 1</label>
+   <label><input type="checkbox" data-prop1="2">data-prop1: 2</label>
+   <label><input type="checkbox" data-prop1="3">data-prop1: 3</label>
+   <label><input type="checkbox" data-prop1="4">data-prop1: 4</label>
+   <label><input type="checkbox" data-prop1="5">data-prop1: 5</label>
+   <label><input type="checkbox" data-prop2="1">data-prop2: 1</label>
+   <label><input type="checkbox" data-prop2="2">data-prop2: 2</label>
+   <label><input type="checkbox" data-prop2="3">data-prop2: 3</label>
+   <label><input type="checkbox" data-prop2="4">data-prop2: 4</label>
+   <label><input type="checkbox" data-prop2="5">data-prop2: 5</label>
+   <label><input type="checkbox" data-prop3="1">data-prop3: 1</label>
+   <label><input type="checkbox" data-prop3="2">data-prop3: 2</label>
+   <label><input type="checkbox" data-prop3="3">data-prop3: 3</label>
+   <label><input type="checkbox" data-prop3="4">data-prop3: 4</label>
+   <label><input type="checkbox" data-prop3="5">data-prop3: 5</label>
+   <label><input type="checkbox" data-prop4="1">data-prop4: 1</label>
+   <label><input type="checkbox" data-prop4="2">data-prop4: 2</label>
+   <label><input type="checkbox" data-prop4="3">data-prop4: 3</label>
+   <label><input type="checkbox" data-prop4="4">data-prop4: 4</label>
+   <label><input type="checkbox" data-prop4="5">data-prop4: 5</label>
+   <label><input type="checkbox" data-prop5="1">data-prop5: 1</label>
+   <label><input type="checkbox" data-prop5="2">data-prop5: 2</label>
+   <label><input type="checkbox" data-prop5="3">data-prop5: 3</label>
+   <label><input type="checkbox" data-prop5="4">data-prop5: 4</label>
+   <label><input type="checkbox" data-prop5="5">data-prop5: 5</label>
+   <button data-prop1="[1,2]" data-prop2="1">prop1: [1,2] && prop2: 1</button>
+   <button data-prop1="[1,2,3]" data-prop3="[2,3]">prop1: [1,2,3] && prop3: [2,3]</button>
+   <div>
+    <div data-prop1="5" data-prop2="2" data-prop3="4" data-prop4="1" data-prop5="5"><strong>Item 1:</strong> <br>prop1: 5<br>prop2: 2<br>prop3: 4<br>prop4: 1<br>prop5: 5</div>
+    <div data-prop1="2" data-prop2="5" data-prop3="4" data-prop4="2" data-prop5="4"><strong>Item 2:</strong> <br>prop1: 2<br>prop2: 5<br>prop3: 4<br>prop4: 2<br>prop5: 4</div>
+    <div data-prop1="2" data-prop2="2" data-prop3="2" data-prop4="2" data-prop5="3"><strong>Item 3:</strong> <br>prop1: 2<br>prop2: 2<br>prop3: 2<br>prop4: 2<br>prop5: 3</div>
+    <div data-prop1="3" data-prop2="2" data-prop3="1" data-prop4="4" data-prop5="5"><strong>Item 4:</strong> <br>prop1: 3<br>prop2: 2<br>prop3: 1<br>prop4: 4<br>prop5: 5</div>
+    <div data-prop1="2" data-prop2="3" data-prop3="4" data-prop4="5" data-prop5="4"><strong>Item 5:</strong> <br>prop1: 2<br>prop2: 3<br>prop3: 4<br>prop4: 5<br>prop5: 4</div>
+    <div data-prop1="5" data-prop2="5" data-prop3="3" data-prop4="4" data-prop5="5"><strong>Item 6:</strong> <br>prop1: 5<br>prop2: 5<br>prop3: 3<br>prop4: 4<br>prop5: 5</div>
+    <div data-prop1="4" data-prop2="4" data-prop3="3" data-prop4="2" data-prop5="2"><strong>Item 7:</strong> <br>prop1: 4<br>prop2: 4<br>prop3: 3<br>prop4: 2<br>prop5: 2</div>
+    <div data-prop1="5" data-prop2="2" data-prop3="5" data-prop4="4" data-prop5="5"><strong>Item 8:</strong> <br>prop1: 5<br>prop2: 2<br>prop3: 5<br>prop4: 4<br>prop5: 5</div>
+    <div data-prop1="2" data-prop2="4" data-prop3="1" data-prop4="5" data-prop5="4"><strong>Item 9:</strong> <br>prop1: 2<br>prop2: 4<br>prop3: 1<br>prop4: 5<br>prop5: 4</div>
+    <div data-prop1="3" data-prop2="5" data-prop3="1" data-prop4="5" data-prop5="1"><strong>Item 10:</strong> <br>prop1: 3<br>prop2: 5<br>prop3: 1<br>prop4: 5<br>prop5: 1</div>
+    <div data-prop1="4" data-prop2="2" data-prop3="4" data-prop4="2" data-prop5="5"><strong>Item 11:</strong> <br>prop1: 4<br>prop2: 2<br>prop3: 4<br>prop4: 2<br>prop5: 5</div>
+    <div data-prop1="5" data-prop2="4" data-prop3="2" data-prop4="1" data-prop5="4"><strong>Item 12:</strong> <br>prop1: 5<br>prop2: 4<br>prop3: 2<br>prop4: 1<br>prop5: 4</div>
+    <div data-prop1="1" data-prop2="2" data-prop3="3" data-prop4="1" data-prop5="1"><strong>Item 13:</strong> <br>prop1: 1<br>prop2: 2<br>prop3: 3<br>prop4: 1<br>prop5: 1</div>
+    <div data-prop1="4" data-prop2="4" data-prop3="5" data-prop4="3" data-prop5="5"><strong>Item 14:</strong> <br>prop1: 4<br>prop2: 4<br>prop3: 5<br>prop4: 3<br>prop5: 5</div>
+    <div data-prop1="3" data-prop2="3" data-prop3="2" data-prop4="2" data-prop5="4"><strong>Item 15:</strong> <br>prop1: 3<br>prop2: 3<br>prop3: 2<br>prop4: 2<br>prop5: 4</div>
+    <div data-prop1="4" data-prop2="5" data-prop3="1" data-prop4="2" data-prop5="5"><strong>Item 16:</strong> <br>prop1: 4<br>prop2: 5<br>prop3: 1<br>prop4: 2<br>prop5: 5</div>
+    <div data-prop1="2" data-prop2="4" data-prop3="3" data-prop4="5" data-prop5="5"><strong>Item 17:</strong> <br>prop1: 2<br>prop2: 4<br>prop3: 3<br>prop4: 5<br>prop5: 5</div>
+    <div data-prop1="3" data-prop2="1" data-prop3="1" data-prop4="4" data-prop5="5"><strong>Item 18:</strong> <br>prop1: 3<br>prop2: 1<br>prop3: 1<br>prop4: 4<br>prop5: 5</div>
+    <div data-prop1="1" data-prop2="2" data-prop3="2" data-prop4="1" data-prop5="2"><strong>Item 19:</strong> <br>prop1: 1<br>prop2: 2<br>prop3: 2<br>prop4: 1<br>prop5: 2</div>
+    <div data-prop1="4" data-prop2="2" data-prop3="2" data-prop4="1" data-prop5="2"><strong>Item 20:</strong> <br>prop1: 4<br>prop2: 2<br>prop3: 2<br>prop4: 1<br>prop5: 2</div>
+    <div data-prop1="5" data-prop2="2" data-prop3="5" data-prop4="3" data-prop5="1"><strong>Item 21:</strong> <br>prop1: 5<br>prop2: 2<br>prop3: 5<br>prop4: 3<br>prop5: 1</div>
+    <div data-prop1="1" data-prop2="2" data-prop3="1" data-prop4="1" data-prop5="1"><strong>Item 22:</strong> <br>prop1: 1<br>prop2: 2<br>prop3: 1<br>prop4: 1<br>prop5: 1</div>
+    <div data-prop1="4" data-prop2="2" data-prop3="3" data-prop4="4" data-prop5="2"><strong>Item 23:</strong> <br>prop1: 4<br>prop2: 2<br>prop3: 3<br>prop4: 4<br>prop5: 2</div>
+    <div data-prop1="1" data-prop2="1" data-prop3="1" data-prop4="1" data-prop5="5"><strong>Item 24:</strong> <br>prop1: 1<br>prop2: 1<br>prop3: 1<br>prop4: 1<br>prop5: 5</div>
+    <div data-prop1="3" data-prop2="5" data-prop3="1" data-prop4="2" data-prop5="3"><strong>Item 25:</strong> <br>prop1: 3<br>prop2: 5<br>prop3: 1<br>prop4: 2<br>prop5: 3</div>
+    <div data-prop1="2" data-prop2="1" data-prop3="4" data-prop4="4" data-prop5="3"><strong>Item 26:</strong> <br>prop1: 2<br>prop2: 1<br>prop3: 4<br>prop4: 4<br>prop5: 3</div>
+    <div data-prop1="2" data-prop2="2" data-prop3="5" data-prop4="1" data-prop5="3"><strong>Item 27:</strong> <br>prop1: 2<br>prop2: 2<br>prop3: 5<br>prop4: 1<br>prop5: 3</div>
+    <div data-prop1="5" data-prop2="4" data-prop3="2" data-prop4="4" data-prop5="4"><strong>Item 28:</strong> <br>prop1: 5<br>prop2: 4<br>prop3: 2<br>prop4: 4<br>prop5: 4</div>
+    <div data-prop1="2" data-prop2="3" data-prop3="4" data-prop4="1" data-prop5="4"><strong>Item 29:</strong> <br>prop1: 2<br>prop2: 3<br>prop3: 4<br>prop4: 1<br>prop5: 4</div>
+    <div data-prop1="5" data-prop2="5" data-prop3="4" data-prop4="1" data-prop5="1"><strong>Item 30:</strong> <br>prop1: 5<br>prop2: 5<br>prop3: 4<br>prop4: 1<br>prop5: 1</div>
+    <div data-prop1="5" data-prop2="5" data-prop3="1" data-prop4="2" data-prop5="5"><strong>Item 31:</strong> <br>prop1: 5<br>prop2: 5<br>prop3: 1<br>prop4: 2<br>prop5: 5</div>
+    <div data-prop1="4" data-prop2="3" data-prop3="4" data-prop4="4" data-prop5="1"><strong>Item 32:</strong> <br>prop1: 4<br>prop2: 3<br>prop3: 4<br>prop4: 4<br>prop5: 1</div>
+    <div data-prop1="4" data-prop2="5" data-prop3="2" data-prop4="3" data-prop5="5"><strong>Item 33:</strong> <br>prop1: 4<br>prop2: 5<br>prop3: 2<br>prop4: 3<br>prop5: 5</div>
+    <div data-prop1="2" data-prop2="4" data-prop3="4" data-prop4="2" data-prop5="4"><strong>Item 34:</strong> <br>prop1: 2<br>prop2: 4<br>prop3: 4<br>prop4: 2<br>prop5: 4</div>
+    <div data-prop1="5" data-prop2="5" data-prop3="1" data-prop4="1" data-prop5="4"><strong>Item 35:</strong> <br>prop1: 5<br>prop2: 5<br>prop3: 1<br>prop4: 1<br>prop5: 4</div>
+    <div data-prop1="1" data-prop2="4" data-prop3="3" data-prop4="3" data-prop5="3"><strong>Item 36:</strong> <br>prop1: 1<br>prop2: 4<br>prop3: 3<br>prop4: 3<br>prop5: 3</div>
+    <div data-prop1="1" data-prop2="3" data-prop3="4" data-prop4="2" data-prop5="3"><strong>Item 37:</strong> <br>prop1: 1<br>prop2: 3<br>prop3: 4<br>prop4: 2<br>prop5: 3</div>
+    <div data-prop1="5" data-prop2="4" data-prop3="2" data-prop4="2" data-prop5="4"><strong>Item 38:</strong> <br>prop1: 5<br>prop2: 4<br>prop3: 2<br>prop4: 2<br>prop5: 4</div>
+    <div data-prop1="1" data-prop2="5" data-prop3="4" data-prop4="4" data-prop5="2"><strong>Item 39:</strong> <br>prop1: 1<br>prop2: 5<br>prop3: 4<br>prop4: 4<br>prop5: 2</div>
+    <div data-prop1="1" data-prop2="4" data-prop3="4" data-prop4="5" data-prop5="5"><strong>Item 40:</strong> <br>prop1: 1<br>prop2: 4<br>prop3: 4<br>prop4: 5<br>prop5: 5</div>
+    <div data-prop1="4" data-prop2="4" data-prop3="1" data-prop4="2" data-prop5="5"><strong>Item 41:</strong> <br>prop1: 4<br>prop2: 4<br>prop3: 1<br>prop4: 2<br>prop5: 5</div>
+    <div data-prop1="2" data-prop2="4" data-prop3="4" data-prop4="4" data-prop5="3"><strong>Item 42:</strong> <br>prop1: 2<br>prop2: 4<br>prop3: 4<br>prop4: 4<br>prop5: 3</div>
+    <div data-prop1="5" data-prop2="5" data-prop3="5" data-prop4="1" data-prop5="2"><strong>Item 43:</strong> <br>prop1: 5<br>prop2: 5<br>prop3: 5<br>prop4: 1<br>prop5: 2</div>
+    <div data-prop1="1" data-prop2="5" data-prop3="1" data-prop4="2" data-prop5="3"><strong>Item 44:</strong> <br>prop1: 1<br>prop2: 5<br>prop3: 1<br>prop4: 2<br>prop5: 3</div>
+    <div data-prop1="1" data-prop2="5" data-prop3="3" data-prop4="1" data-prop5="3"><strong>Item 45:</strong> <br>prop1: 1<br>prop2: 5<br>prop3: 3<br>prop4: 1<br>prop5: 3</div>
+    <div data-prop1="5" data-prop2="1" data-prop3="5" data-prop4="2" data-prop5="4"><strong>Item 46:</strong> <br>prop1: 5<br>prop2: 1<br>prop3: 5<br>prop4: 2<br>prop5: 4</div>
+    <div data-prop1="5" data-prop2="2" data-prop3="1" data-prop4="1" data-prop5="1"><strong>Item 47:</strong> <br>prop1: 5<br>prop2: 2<br>prop3: 1<br>prop4: 1<br>prop5: 1</div>
+    <div data-prop1="1" data-prop2="4" data-prop3="4" data-prop4="3" data-prop5="3"><strong>Item 48:</strong> <br>prop1: 1<br>prop2: 4<br>prop3: 4<br>prop4: 3<br>prop5: 3</div>
+    <div data-prop1="3" data-prop2="5" data-prop3="1" data-prop4="3" data-prop5="3"><strong>Item 49:</strong> <br>prop1: 3<br>prop2: 5<br>prop3: 1<br>prop4: 3<br>prop5: 3</div>
+    <div data-prop1="1" data-prop2="4" data-prop3="2" data-prop4="2" data-prop5="3"><strong>Item 50:</strong> <br>prop1: 1<br>prop2: 4<br>prop3: 2<br>prop4: 2<br>prop5: 3</div>
+   </div>
+  </div>
+</body>
+</html>

@@ -1,15 +1,18 @@
 {
-  "name": "jquery.datafilter.js",
+  "name": "jquery.datafilter",
   "version": "0.1.0",
   "homepage": "https://github.com/Fuzzyma/jquery.dataFilter",
   "authors": [
     "Ulrich-Matthias Schäfer"
   ],
   "description": "Advanced filter with multiple choice filtering",
-  "main": "./dist/jquery.dataFilter.js",
+  "main": [
+    "./dist/jquery.dataFilter.js"
+  ],
   "keywords": [
     "jquery-plugin",
-    "filter"
+    "filter",
+    "datafilter"
   ],
   "license": "MIT",
   "ignore": [

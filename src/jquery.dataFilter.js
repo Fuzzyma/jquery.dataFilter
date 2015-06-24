@@ -1,12 +1,3 @@
-/*
- * jquery-dataFilter
- * https://github.com/Fuzzyma/jquery-dataFilter
- *
- * Copyright (c) 2015 Ulrich-Matthias Schäfer
- * Licensed under the MIT license.
- */
-
-/*jshint -W083 */
 (function($, undefined){
 
     $.fn.dataFilter = function( use ) {
@@ -17,7 +8,7 @@
             selector = '',
             $filtered = this;
 
-        // We good a jQuery-Object here
+        // We got a jQuery-Object here
         if(use instanceof $){
 
             use.each(function(){

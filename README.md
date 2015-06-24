@@ -1,21 +1,19 @@
-# jquery-dataFilter
+# jquery.dataFilter
 
 Advanced data-filter with multiple choice filtering
 
 ## Getting Started
-Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/ulima/jquery-dataFilter/master/dist/dataFilter.min.js
-[max]: https://raw.github.com/ulima/jquery-dataFilter/master/dist/dataFilter.js
-
-Or just run
+Install the package with bower or npm
 
     bower install jquery.datafilter
+	npm install jquery.datafilter
+
 
 Include the script in your web page:
 
 	<script src="jquery.js"></script>
-	<script src="dist/dataFilter.min.js"></script>
+	<script src="dist/datafilter.min.js"></script>
 	<script>
 	jQuery(function($) {
 	  $('div').dataFilter({

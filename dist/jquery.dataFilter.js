@@ -1,4 +1,4 @@
-/*! jquery.datafilter - v0.1.0 - 2015-06-24
+/*! jquery.datafilter - v1.0.0 - 2015-06-24
 * https://github.com/Fuzzyma/jquery.dataFilter
 * Copyright (c) 2015 Ulrich-Matthias Schäfer; Licensed MIT */
 (function($, undefined){
